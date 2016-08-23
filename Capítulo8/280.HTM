@@ -1,0 +1,94 @@
+<Html>
+<Head><Title>Vinculación de Datos</Title></Head>
+<Script language="JavaScript">
+ <!--
+
+ function Anterior(){
+   if (ListaRopa.recordset.AbsolutePosition == 1){
+      alert ('Primer Registro');
+      return false;
+      }
+   ListaRopa.recordset.MovePrevious();
+   if (document.Entrada.Mbusca.value != ""){
+     while (document.Entrada.HModelo.value > document.Entrada.Mbusca.value){
+       ListaRopa.recordset.MovePrevious();
+       } //del while
+     } //del if
+   if ( (document.Entrada.HModelo.value == document.Entrada.Mbusca.value) ||
+        (document.Entrada.Mbusca.value == "") ){
+        document.Datos.Modelo.value = document.Entrada.HModelo.value;
+        document.Datos.color.value = document.Entrada.Hcolor.value;
+        document.Datos.precio.value = document.Entrada.Hprecio.value;
+        document.Datos.talla.value = document.Entrada.Htalla.value;
+     return true;
+     } //del if
+   alert ('Primer Registro');
+  } //de la funcion
+
+ function Siguiente(){
+   if (ListaRopa.recordset.AbsolutePosition == ListaRopa.recordset.recordCount){
+      alert ('Ultimo Registro');
+      return false;
+      }
+   ListaRopa.recordset.MoveNext();
+   if (document.Entrada.Mbusca.value != ""){
+     while (document.Entrada.HModelo.value < document.Entrada.Mbusca.value){
+        ListaRopa.recordset.MoveNext();
+        } //del while
+     }  //del if
+   if ( (document.Entrada.HModelo.value == document.Entrada.Mbusca.value) ||
+        (document.Entrada.Mbusca.value == "") ){
+        document.Datos.Modelo.value = document.Entrada.HModelo.value;
+        document.Datos.color.value = document.Entrada.Hcolor.value;
+        document.Datos.precio.value = document.Entrada.Hprecio.value;
+        document.Datos.talla.value = document.Entrada.Htalla.value;
+        return true;
+        } //del if
+   alert ('Ultimo Registro');
+  } //de la funcion
+
+ // -->
+</Script>
+
+<Body>
+<Center>
+<H3> Catálogo de Ropa</H3>
+<Object ID="ListaRopa" 
+  Classid="clsid:333C7BC4-460F-11D0-BC04-0080C7055A83">
+  <Param Name="DataURL" Value="Ropa.txt">
+  <Param Name="UseHeader" Value="true">
+  <Param Name="Sort" Value="modelo">
+</Object>
+
+<Form name="Entrada">
+  Modelo a buscar:
+  <Input Type="Text" name="Mbusca" size=20 maxlength=20>
+  <Input Type="Hidden" name="HModelo" size=20 maxlength=20 DataSrc="#ListaRopa" DataFld="modelo" onFocus="blur();">
+  <Input Type="Hidden" name="Hcolor" size=15 maxlength=20 DataSrc="#ListaRopa" DataFld="color" onFocus="blur();">
+  <Input Type="Hidden" name="Htalla" size=3 maxlength=3 DataSrc="#ListaRopa" DataFld="talla" onFocus="blur();">
+  <Input Type="Hidden" name="Hprecio" size=5 maxlength=5 DataSrc="#ListaRopa" DataFld="precio" onFocus="blur();">
+</Form>
+
+<Form name="Datos">
+ <Table border=1>
+ <Tr>
+  <Td>Modelo:</Td>
+  <Td><Input Type="Text" name="Modelo" size=20 maxlength=20 onFocus="blur();"></Td>
+  <Td>Color:</Td>
+  <Td><Input Type="Text" name="color" size=15 maxlength=20 onFocus="blur();"></Td>
+ </Tr><Tr>
+  <Td>Talla:</Td>
+  <Td><Input Type="Text" name="talla" size=3 maxlength=3 onFocus="blur();"></Td>
+  <Td>Precio:</Td>
+  <Td><Input Type="Text" name="precio" size=5 maxlength=5 onFocus="blur();"></Td>
+ </Tr>
+ </Table>
+</Form>
+
+<Form name="Control">
+  <Input Type="Button" Value="Anterior" onClick="Anterior();">
+  <Input Type="Button" Value="Siguiente" onClick="Siguiente();">
+</Form>
+</Center>
+</Body>
+</Html>

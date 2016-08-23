@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Documento sin título</title>
+</head>
+
+<body>
+<div ng-init="optionSelected=1">
+  <div align="center" ng-class="{'lnactive':optionSelected==1}"><a ng-click="optionSelected=1" ng-class="{'active':optionSelected==1}">INICIAR SESIÓN</a></div>
+  <div align="center" ng-class="{'lnactive':optionSelected==2}"><a ng-click="optionSelected=2" ng-class="{'active':optionSelected==2}">CREAR CUENTA</a></div>
+</div>
+<div ng-init="registerForm=true">
+  <div ng-show="optionSelected==1">
+    <div ng-controller="LoginOAuthController" ng-init="fbRedirect='http://www.linio.com.co/connect/facebook'; gplusRedirect='http://www.linio.com.co/connect/gplus'">
+      <form action="https://www.linio.com.co/account/login_check" method="post" name="login_form" id="login_form">
+        <div>
+          <div>
+            <label for="login_form_email">Email</label>
+            <input type="email" id="login_form_email" name="login_form[email]" required="required" placeholder="Ejemplo: jgonzalesc89@gmail.com" pattern="^[a-zA-Z0-9._%+\-]+@([a-zA-Z0-9-]{1,}\.)+[a-zA-Z]{2,}$" />
+          </div>
+          <div>
+            <label for="login_form_password">Contraseña</label>
+            <input type="password" id="login_form_password" name="login_form[password]" required="required" placeholder="●●●●●●●●" />
+          </div>
+          <div><a href="https://www.linio.com.co/account/password/recover/request">Olvidé mi contraseña</a></div>
+          <button type="submit" id="login_form_login" name="login_form[login]">INICIAR SESIÓN SEGURA</button>
+        </div>
+        <div>Regístrate usando tus redes sociales.Este paso te ahorrará tiempo y podrás compartir productos y promociones de forma fácil con tu familia y amigos.</div>
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+modelo,color,precio,talla
+pantalon,negro,5000,40
+pantalon,azul,7000,44
+chaqueta,beige,4500,52
+americana,azul,15000,50
+americana,gris,15000,50
+camisa,blanca,4000,42
+camisa,verde,4000,44
+camisa,azul,4500,42

@@ -1,0 +1,13 @@
+
+<?php session_start() ?>
+<?php if(isset($_SESSION[""]))
+{
+?>
+
+ <h1> no aperece en la base de datos <?php echo $_SESSION[""] ?>.</h1>
+<?php 
+}else{
+ header("Location: index.php");
+}
+
+?>

@@ -1,0 +1,45 @@
+<Html>
+<Head><Title>Vinculación de Datos</Title></Head>
+<Script language="JavaScript">
+ <!--
+
+ function SigPag(){
+   MiTabla.nextPage();
+  }
+
+ function PrevPag(){
+   MiTabla.previousPage();
+  }
+
+ // -->
+</Script>
+
+<Body>
+<Center>
+<H3> Catálogo de Ropa</H3>
+<Object ID="ListaRopa" 
+  Classid="clsid:333C7BC4-460F-11D0-BC04-0080C7055A83">
+  <Param Name="DataURL" Value="Ropa.txt">
+  <Param Name="UseHeader" Value="true">
+</Object>
+
+<Table Id="MiTabla" DataSrc="#ListaRopa" border=1 DataPagesize=3>
+ <Thead>
+  <Tr><Th>Modelo<Th>Color<Th>Precio<Th>Talla</Tr>
+ </Thead>
+ <Tbody>
+  <Tr>
+   <Td><Span DataFld="modelo"></Span></Td>
+   <Td><Span DataFld="color"></Span></Td>
+   <Td><Span DataFld="precio"></Span></Td>
+   <Td><Span DataFld="talla"></Span></Td>
+  </Tr>
+ </Tbody>
+</Table>
+<Form name="MiForm">
+  <Input Type="Button" Value="Pág. Siguiente" onClick="SigPag();">
+  <Input Type="Button" Value="Pág. Anterior" onClick="PrevPag();">
+</Form>
+</Center>
+</Body>
+</Html>

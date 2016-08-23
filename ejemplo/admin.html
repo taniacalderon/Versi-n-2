@@ -1,0 +1,38 @@
+<?php session_start() ?>
+<?php if(isset($_SESSION['administrador']))
+{
+?>
+<style type="text/css">
+body {
+	background-image: url(../imagenes%20de%20fondo/fondoperpetua2.gif);
+}
+</style>
+
+
+<h1> administrador <?php echo $_SESSION['administrador'] ?></h1>
+<?php 
+}else{
+ header("Location: index.php");
+}
+
+?>
+
+<html>
+<a href="reportes.html"><h1>Reportes</h1></a>
+<a href="../tasnego/crudcliente/index.html"><h1>Gestion De Usuario </h1></a>
+<a href="../tasnego/crudproductos/index.html"><h1>Gestion De Productos</h1></a>
+<a href="../tasnego/crudinventario/index.html"><h1>Gestion De inventario</h1>
+</a><a href="../subir/archivo.html">
+<h1>subir las imagenes de los productos</h1>
+</a><a href="../subir/6reportehtmlqli1.php"><h1>listado de los productos</h1></a>
+<p>&nbsp;</p>
+</a><a href="../tasnego/crudinventario/index.html">
+<p>&nbsp;</p>
+</a>
+
+<input type="button"  name="imprimir" value="Imprimir P&aacute;gina" onclick="window.print();"> 
+
+<a href="index.php"><p>Pagina Anterior<p/></a>
+</body>
+</html>
+</html>
